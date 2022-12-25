@@ -2,8 +2,9 @@
 //  ToFormsView.swift
 //  TodoList
 //
-//  Created by Almat Kairatov on 21.12.2022.
+//  Created by Almat Kairatov on 25.12.2022.
 //
+
 
 import SwiftUI
 import RealmSwift
@@ -75,11 +76,5 @@ struct ToFormsView: View {
                 .frame(maxWidth: .infinity)
             }.buttonStyle(.borderedProminent)
             .disabled(taskName.isEmpty)
-    }
-}
-
-struct ToFormsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ToFormsView()
     }
 }

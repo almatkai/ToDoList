@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FF9984D2958C21A00335555 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9984C2958C21A00335555 /* NotesView.swift */; };
+		3FF9984F2958C2C900335555 /* Collabsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9984E2958C2C900335555 /* Collabsible.swift */; };
+		3FF998512958C32600335555 /* ToFormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF998502958C32600335555 /* ToFormsView.swift */; };
 		8D8DC8D1285E260D002672E4 /* TodoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DC8D0285E260D002672E4 /* TodoListApp.swift */; };
 		8D8DC8D3285E260D002672E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DC8D2285E260D002672E4 /* ContentView.swift */; };
 		8D8DC8D5285E260E002672E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8DC8D4285E260E002672E4 /* Assets.xcassets */; };
@@ -18,10 +21,12 @@
 		8D8DC8ED285E4DE9002672E4 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DC8EC285E4DE9002672E4 /* TodoListView.swift */; };
 		8D8DC8EF285E4F80002672E4 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DC8EE285E4F80002672E4 /* TaskCellView.swift */; };
 		8D8DC8F3285E7806002672E4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DC8F2285E7806002672E4 /* Note.swift */; };
-		8D8DC8F5285E79C8002672E4 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DC8F4285E79C8002672E4 /* NotesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FF9984C2958C21A00335555 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		3FF9984E2958C2C900335555 /* Collabsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collabsible.swift; sourceTree = "<group>"; };
+		3FF998502958C32600335555 /* ToFormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToFormsView.swift; sourceTree = "<group>"; };
 		8D8DC8CD285E260D002672E4 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8DC8D0285E260D002672E4 /* TodoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListApp.swift; sourceTree = "<group>"; };
 		8D8DC8D2285E260D002672E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,7 +37,6 @@
 		8D8DC8EC285E4DE9002672E4 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		8D8DC8EE285E4F80002672E4 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 		8D8DC8F2285E7806002672E4 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		8D8DC8F4285E79C8002672E4 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +112,9 @@
 			children = (
 				8D8DC8EC285E4DE9002672E4 /* TodoListView.swift */,
 				8D8DC8EE285E4F80002672E4 /* TaskCellView.swift */,
-				8D8DC8F4285E79C8002672E4 /* NotesView.swift */,
+				3FF9984C2958C21A00335555 /* NotesView.swift */,
+				3FF9984E2958C2C900335555 /* Collabsible.swift */,
+				3FF998502958C32600335555 /* ToFormsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,12 +197,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8DC8E8285E2807002672E4 /* Task.swift in Sources */,
+				3FF9984F2958C2C900335555 /* Collabsible.swift in Sources */,
 				8D8DC8D3285E260D002672E4 /* ContentView.swift in Sources */,
+				3FF998512958C32600335555 /* ToFormsView.swift in Sources */,
 				8D8DC8F3285E7806002672E4 /* Note.swift in Sources */,
 				8D8DC8ED285E4DE9002672E4 /* TodoListView.swift in Sources */,
 				8D8DC8D1285E260D002672E4 /* TodoListApp.swift in Sources */,
 				8D8DC8E5285E26E0002672E4 /* RealmManager.swift in Sources */,
-				8D8DC8F5285E79C8002672E4 /* NotesView.swift in Sources */,
+				3FF9984D2958C21A00335555 /* NotesView.swift in Sources */,
 				8D8DC8EF285E4F80002672E4 /* TaskCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
