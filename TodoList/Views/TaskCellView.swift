@@ -29,30 +29,39 @@ struct TaskCellView: View {
         NavigationLink {
             NotesView(task: task)
         } label: {
-            HStack {
-                Image(systemName: task.isCompleted ? "checkmark.square": "square")
-                    .onTapGesture {
-                        let taskToUpdate = realm.object(ofType: Task.self, forPrimaryKey: task._id)
-                        try? realm.write {
-                            taskToUpdate?.isCompleted.toggle()
+            VStack{
+                HStack {
+                    Image(systemName: task.isCompleted ? "checkmark.square": "square")
+                        .foregroundColor(task.isCompleted ? .green : .gray)
+                        .onTapGesture {
+                            let taskToUpdate = realm.object(ofType: Task.self, forPrimaryKey: task._id)
+                            try? realm.write {
+                                taskToUpdate?.isCompleted.toggle()
+                            }
+                            
                         }
-                        
+                    
+                    Text(task.title)
+                        .lineLimit(1)
+                    Spacer()
+                    Text(task.priority.rawValue)
+                        .padding(6)
+                        .frame(width: 75)
+                        .background(priorityBackground(task.priority))
+                        .foregroundColor(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+                }
+                HStack{
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        Text(task.date, style: .time)
+                            .font(.system(size:12))
+                        Text(task.date, style: .date)
+                            .font(.system(size:12))
                     }
-                
-                Text(task.title)
-                Spacer()
-                Text(task.priority.rawValue)
-                    .padding(6)
-                    .frame(width: 75)
-                    .background(priorityBackground(task.priority))
-                    .foregroundColor(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+                }
             }
-//                .frame(alignment: .center)
-//                .position(x: self,y: self)
-//                .onTapGesture {
-//                    .position(y:100)
-//                }
         }
     }
 }

@@ -18,8 +18,10 @@ class RealmManager: ObservableObject {
     @Published var configuration: Realm.Configuration?
     
     private init() {
-        self.app = App(id: "application-0-yqwgh")
+//        self.app = App(id: "application-0-yqwgh")
+        self.app = App(id: "application-0-erriu")
     }
+
     
     @MainActor
     func initialize() async throws {
@@ -33,7 +35,7 @@ class RealmManager: ObservableObject {
                 return
             } else {
                 subs.append(QuerySubscription<Task>(name: "all-tasks"))
-                subs.append(QuerySubscription<Note>(name: "all-notes"))
+                subs.append(QuerySubscription<Note>(name: "all-notes")) 
             }
             
         }, rerunOnOpen: true)

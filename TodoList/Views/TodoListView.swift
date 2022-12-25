@@ -62,16 +62,18 @@ struct TodoListView: View, Animatable {
                     }
                 } header: {
                     Text(section.rawValue)
+                        .foregroundColor(section.rawValue == "Completed" ? .green : .gray)
                 }
 
             }
-        }.listStyle(.plain)
+        }
+        .listStyle(.plain)
             .frame(alignment: .center)
     }
 }
 
-struct TodoListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoListView()
-    }
-}
+//struct TodoListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoListView()
+//    }
+//}

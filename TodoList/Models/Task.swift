@@ -20,5 +20,6 @@ class Task: Object, Identifiable {
     @Persisted var title: String = ""
     @Persisted var isCompleted: Bool = false
     @Persisted var priority = Priority.medium
-    @Persisted var notes: List<Note> = List<Note>() 
+    @Persisted var notes: List<Note> = List<Note>()
+    @Persisted var date: Date = Date.now
 }
