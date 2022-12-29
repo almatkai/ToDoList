@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
 struct TaskCellView: View {
     
     let task: Task
@@ -23,6 +24,8 @@ struct TaskCellView: View {
                 return .red
         }
     }
+    
+    @State var mainTitle = "Main Menu"
 
     var body: some View {
 //        @State var taskPos:
@@ -40,9 +43,8 @@ struct TaskCellView: View {
                             }
                             
                         }
-                    
                     Text(task.title)
-                        .lineLimit(1)
+                        .lineLimit(2)
                     Spacer()
                     Text(task.priority.rawValue)
                         .padding(6)

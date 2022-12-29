@@ -19,6 +19,7 @@ struct TodoListApp: App {
                     ContentView()
                         .environment(\.realmConfiguration, configuration)
                         .environment(\.realm, realm)
+//                        .environment(\PartitionValue, user.id)
                 }
                 
                 

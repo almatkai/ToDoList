@@ -35,7 +35,7 @@ struct Collapsible<Content: View>: View {
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)
             .clipped()
-            .animation(.easeOut)
+            .animation(.easeOut(duration: 0.45))
             .transition(.slide)
             .disabled(collapsed ? true : false)
         }

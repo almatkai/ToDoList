@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import SwiftUI
 
 class Note: Object, Identifiable {
     @Persisted(primaryKey: true) var _id: ObjectId

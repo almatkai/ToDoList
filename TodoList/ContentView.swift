@@ -28,10 +28,13 @@ extension Color {
     }
 }
 
+@available(iOS 16.0, *)
 struct ContentView: View {
     @Environment(\.scenePhase) var appState
+    
     var body: some View {
         NavigationView {
+            
             VStack {
                 Divider()
                 Collapsible(
@@ -55,13 +58,6 @@ struct ContentView: View {
             
             }.padding()
                 .navigationTitle("Tasks")
-
         }
      }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
 }

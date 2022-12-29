@@ -8,12 +8,6 @@
 import SwiftUI
 import RealmSwift
 
-extension Color {
-    static func random() -> Color {
-        return Color(red: Double.random(in: 0...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1))
-    }
-}
-
 @available(iOS 16.0, *)
 struct NotesView: View {
     
@@ -22,8 +16,13 @@ struct NotesView: View {
     
     var body: some View {
         VStack {
-            TextField("Enter note", text: $noteText, axis: .vertical)
-                .textFieldStyle(.roundedBorder)
+            TextField("Enter note", text: $task.title, axis: .vertical)
+                .textFieldStyle(.plain)
+                .font(.system(size: 20))
+                .padding()
+            TextField("Enter subtask", text: $noteText, axis: .vertical)
+                .textFieldStyle(.plain)
+                .padding(.left, 18)
             Button(action: {
                 let note = Note()
                 note.text = noteText
@@ -34,7 +33,7 @@ struct NotesView: View {
                 // clear the textbox
                 noteText = ""
             }, label: {
-                Text("Save note")
+                Text("Add")
             }).buttonStyle(.borderedProminent)
                 .disabled(noteText.isEmpty)
             
@@ -44,7 +43,7 @@ struct NotesView: View {
                     HStack {
                         Text("\(index + 1)")
                             .frame(width: 25, height: 25)
-                            .background(Color.random())
+                            .background(.orange)
                             .foregroundColor(.white
                             )
                             .clipShape(RoundedRectangle(cornerRadius: 6.0, style: .continuous))
@@ -53,10 +52,21 @@ struct NotesView: View {
                 }
                 .onDelete(perform: $task.notes.remove)
                 .listStyle(.plain)
-            }
-            .navigationBarTitle(task.title)
+            }.listStyle(.plain)
+//            .toolbar {
+//                ToolbarItem(placement: .principal) {
+////                    TextField("Navigation Title", text: $task.title)
+////                        .font(.system(size:24))
+////                        .fontWeight(.bold)
+//                    Text("")
+//                }
+//            }
         }.padding()
     }
-
 }
 
+//struct TodoListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoListView()
+//    }
+//}

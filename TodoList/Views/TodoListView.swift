@@ -15,6 +15,8 @@ enum Sections: String, CaseIterable {
 
 struct TodoListView: View, Animatable {
     
+    @State private var hasTimeElapsed = false
+    
     @Environment(\.realm) private var realm
     @ObservedResults(Task.self) var tasks: Results<Task>
     
@@ -27,6 +29,8 @@ struct TodoListView: View, Animatable {
     }
     
     var body: some View {
+        
+        
         List {
             ForEach(Sections.allCases, id: \.self) { section in
                 Section {
@@ -38,7 +42,8 @@ struct TodoListView: View, Animatable {
                     }
  
                     ForEach(filteredTasks, id: \._id) { task in
-                       TaskCellView(task: task)
+                        TaskCellView(task: task)
+                       
                     }.onDelete { indexSet in
                         
                         indexSet.forEach { index in
@@ -69,6 +74,20 @@ struct TodoListView: View, Animatable {
         }
         .listStyle(.plain)
             .frame(alignment: .center)
+            .onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                            hasTimeElapsed = true
+                        }
+                if(hasTimeElapsed){
+                    for task in tasks {
+                        if(task.title == ""){
+                            $tasks.remove(task)
+                        }
+                    }
+                }
+            }
+            .transition(.slide)
+            .animation(.easeOut(duration: 0.45))
     }
 }
 
