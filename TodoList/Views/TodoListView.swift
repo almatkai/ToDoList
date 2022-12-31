@@ -18,6 +18,7 @@ struct TodoListView: View, Animatable {
     @State private var hasTimeElapsed = false
     
     @Environment(\.realm) private var realm
+    
     @ObservedResults(Task.self) var tasks: Results<Task>
     
     var pendingTasks: [Task] {

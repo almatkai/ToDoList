@@ -11,7 +11,7 @@ struct Collapsible<Content: View>: View {
     @State var label: () -> Text
     @State var content: () -> Content
     
-    @State private var collapsed: Bool = true
+    @State var collapsed: Bool = false
     
     var body: some View {
         VStack {

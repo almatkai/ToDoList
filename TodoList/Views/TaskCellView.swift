@@ -19,7 +19,7 @@ struct TaskCellView: View {
             case .low:
                 return .gray
             case .medium:
-                return .orange
+                return Color(hex: "f7cf4c")
             case .high:
                 return .red
         }

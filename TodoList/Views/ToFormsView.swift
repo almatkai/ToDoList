@@ -24,7 +24,7 @@ struct ToFormsView: View {
             case "Low":
                 return .gray
             case "Medium":
-                return .orange
+                return Color(hex: "e6c244")
             case "High":
                 return .red
         default:
@@ -37,9 +37,6 @@ struct ToFormsView: View {
     @State private var date = Date.now
     
     var body: some View {
-        TextField("Enter task", text: $taskName, axis: .vertical)
-            .textFieldStyle(PlainTextFieldStyle())
-            .padding(.top,10)
         HStack{
             DatePicker("", selection: $date)
                 .environment(\.locale, Self.locale)
